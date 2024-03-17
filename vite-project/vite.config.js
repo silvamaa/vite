@@ -9,8 +9,8 @@ export default defineConfig({
         // List your html files here, e.g:
         index: resolve(__dirname, "index.html"),
         tracking: resolve(__dirname, "tracking.html"),
-        about: resolve(__dirname, "about-us.html"),
         users: resolve(__dirname, "users.html"),
+        about: resolve(__dirname, "about-us.html"),
       },
     },
   },
