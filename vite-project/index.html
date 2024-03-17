@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/health-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vital Track</title>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about-us.html">About Us</a></li>
+    </ul>
+
+    <style>
+      body {
+        background-image: url("/family.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-attachment: fixed;
+        border-radius: 15px;
+      }
+    </style>
+
+    <h1>Vital Track</h1>
+    <div class="options">
+      <button id="signupButton">Create User</button>
+      <button id="loginButton">Log In</button>
+    </div>
+
+    <div id="signupForm" style="display: none">
+      <h3>CREATE USER</h3>
+      <form class="create_user_form">
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="Username" />
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Password" />
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Email" />
+        <input name="submit" type="submit" value="Sign Up" class="createuser" />
+      </form>
+    </div>
+
+    <div id="loginForm" style="display: none">
+      <h3>LOGIN USER</h3>
+      <form class="login_form">
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="Username" />
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Password" />
+        <input name="submit" type="submit" value="Login" class="loginuser" />
+      </form>
+      <div id="loginResponse"></div>
+    </div>
+
+    <footer>© Copyright VitalTrack, 2024 ©</footer>
+  </body>
+
+  <script type="module" src="/index.js"></script>
+</html>

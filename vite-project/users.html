@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/health-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vital Track</title>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tracking.html">Mood Form</a></li>
+      <li><a href="users.html">Users</a></li>
+
+      <li style="float: right" class="active logout"><a href="#">Logout</a></li>
+    </ul>
+
+    <div class="container">
+      <!-- GET USERS -->
+      <div style="margin-top: 20px">
+        <h3>All users</h3>
+        <div class="users"><p>Get all the users that are in our database! <br> When logged in, you can modify our database by <br> viewing users information and deleting users.</p></div>
+        <table class="user-table">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Get Information</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody class="tbody"></tbody>
+        </table>
+        <button class="get_users">Get Users</button>
+      </div>
+
+      <!-- GET USER INFORMATION -->
+      <div style="flex: 1; margin-left: 20px; margin-top: 20px">
+        <div id="userInfo" style="display: none">
+          <h3>User Information</h3>
+          <p><strong>Username:</strong> <span id="username"></span></p>
+          <p><strong>Email:</strong> <span id="email"></span></p>
+          <p><strong>Level:</strong> <span id="level"></span></p>
+          <!-- <p><strong>Created At:</strong> <span id="createdAt"></span></p> -->
+          <p><strong>ID:</strong> <span id="id"></span></p>
+        </div>
+      </div>
+    </div>
+
+    <footer>© Copyright VitalTrack, 2024 ©</footer>
+
+    <script type="module" src="/users.js"></script>
+  </body>
+</html>

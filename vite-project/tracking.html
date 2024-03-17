@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/health-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vital Track</title>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tracking.html">Mood Form</a></li>
+      <li><a href="users.html">Users</a></li>
+      <li style="float: right" class="active logout"><a href="#">Logout</a></li>
+    </ul>
+
+    <p class="welcome"><b>WELCOME!</b></p>
+
+    <!-- ADD ENTRY -->
+    <div class="forms">
+      <div style="flex: 1">
+        <h3>Add Entry</h3>
+        <form id="moodForm">
+          <label for="mood">Mood:</label>
+          <input type="text" id="mood" name="mood" required /><br />
+          <label for="sleep_hours">Sleep Hours:</label>
+          <input
+            type="number"
+            id="sleep_hours"
+            name="sleep_hours"
+            required
+          /><br />
+          <label for="notes">Notes:</label>
+          <input type="text" id="notes" name="notes" required /><br />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- GET USERS DIARY ENTRIES -->
+    <div style="flex: 2">
+      <h3>Get Diary Entries</h3>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Mood</th>
+            <th>Sleep Hours</th>
+            <th>Notes</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody class="diary-entries"></tbody>
+      </table>
+      <button class="get_entries">Get Entries</button>
+    </div>
+
+    <!-- UPDATE ENTRY -->
+    <div id="updateModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Update Entry</h2>
+        <form id="updateForm">
+          <label for="moodInput">Mood:</label>
+          <input type="text" id="moodInput" name="mood" required /><br />
+          <label for="sleepHoursInput">Sleep Hours:</label>
+          <input
+            type="number"
+            id="sleepHoursInput"
+            name="sleep_hours"
+            required
+          /><br />
+          <label for="notesInput">Notes:</label>
+          <input type="text" id="notesInput" name="notes" required /><br />
+          <button type="submit" id="submitModificationButton">Update</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>© Copyright VitalTrack, 2024 ©</footer>
+
+    <script type="module" src="/tracking.js"></script>
+  </body>
+</html>
