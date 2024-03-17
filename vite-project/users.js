@@ -121,13 +121,13 @@ function displayUserInfo(userData) {
   const usernameElement = document.getElementById("username");
   const emailElement = document.getElementById("email");
   const levelElement = document.getElementById("level");
-  // const dateElement = document.getElementById("date");
+  const dateElement = document.getElementById("createdAt");
 
   idElement.innerHTML = `${userData.user_id}`;
   usernameElement.innerHTML = `${userData.username}`;
   emailElement.innerHTML = `${userData.email}`;
   levelElement.innerHTML = `${userData.user_level}`;
-  // dateElement.innerHTML = `<strong>Date Created:</strong> ${userData.created_at}`;
+  dateElement.innerHTML = `${userData.created_at}`;
 
   userInfoContainer.style.display = "block";
 }

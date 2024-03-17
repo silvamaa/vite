@@ -26,11 +26,12 @@ createUser.addEventListener("click", async (evt) => {
   const form = document.querySelector(".create_user_form");
   const username = form.querySelector("input[name=username]").value;
   const password = form.querySelector("input[name=password]").value;
+  const email = form.querySelector("input[name=email]").value;
 
   const data = {
     username: username,
     password: password,
-    email: form.querySelector("input[name=email]").value,
+    email: email,
   };
 
   const options = {

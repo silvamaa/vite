@@ -12,19 +12,41 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="tracking.html">Mood Form</a></li>
       <li><a href="users.html">Users</a></li>
+
       <li style="float: right" class="active logout"><a href="#">Logout</a></li>
     </ul>
 
-    <p class="welcome"><b>WELCOME!</b></p>
+    <style>
+      body {
+        background-color: white;
+        background-image: url(/bg.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-attachment: fixed;
+        border-radius: 15px;
+      }
+    </style>
+
+    <p class="welcome"><b>WELCOME TO VITAL TRACK!</b></p>
 
     <!-- ADD ENTRY -->
     <div class="forms">
       <div style="flex: 1">
-        <h3>Add Entry</h3>
+        <h3>Mood Form</h3>
+        <div class="entry">
+          <p>
+            Using Mood Form you can track your health by writing information
+            according to your mood and sleep hours. <br />
+            This can help you improve and analyze yourself by following you
+            daily life.
+          </p>
+        </div>
         <form id="moodForm">
           <label for="mood">Mood:</label>
           <input type="text" id="mood" name="mood" required /><br />
           <label for="sleep_hours">Sleep Hours:</label>
+          <br />
           <input
             type="number"
             id="sleep_hours"
@@ -40,7 +62,14 @@
 
     <!-- GET USERS DIARY ENTRIES -->
     <div style="flex: 2">
-      <h3>Get Diary Entries</h3>
+      <h3>Diary</h3>
+      <div class="diary">
+        <p>
+          You can view your old Mood Forms and modify or update them according
+          to your needs. <br />
+          You can also delete irrelevant diary entries if needed.
+        </p>
+      </div>
       <table class="styled-table">
         <thead>
           <tr>
@@ -60,11 +89,12 @@
     <div id="updateModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
-        <h2>Update Entry</h2>
+        <h2 class="update">Update Entry</h2>
         <form id="updateForm">
           <label for="moodInput">Mood:</label>
           <input type="text" id="moodInput" name="mood" required /><br />
           <label for="sleepHoursInput">Sleep Hours:</label>
+          <br />
           <input
             type="number"
             id="sleepHoursInput"

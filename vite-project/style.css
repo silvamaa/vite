@@ -25,7 +25,7 @@ a:hover {
 
 body {
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 75vh;
   margin: 16px;
 }
 
@@ -71,9 +71,15 @@ h1 {
   color: rgb(0, 0, 0);
 }
 
+.get_users,
+.get_entries {
+  display: block;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
 button {
-  display: block; /* Change display property to block */
-  margin: 0 auto; /* Set left and right margins to auto */
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -84,7 +90,6 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-
 
 button:hover {
   border-color: #646cff;
@@ -102,6 +107,8 @@ h3 {
   font-size: 1.8em;
 }
 
+.entry,
+.diary,
 .users {
   text-align: center;
 }
@@ -109,8 +116,8 @@ h3 {
 button.del,
 button.check,
 button.update {
-  padding: 0.3rem 0.6rem;
-  margin: 0;
+  padding: 0.5rem 1rem;
+  margin: 10px;
 }
 
 button.update {
@@ -131,6 +138,8 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: darkcyan;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 li {
@@ -143,14 +152,15 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  transition: background-color 0.3s; /* Add transition effect */
+  transition: background-color 0.3s;
 }
 
 li a:hover {
   color: white;
   background-color: rgb(3, 89, 181);
   transform: scale(1);
-  border-radius: 5px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 li a:hover:not(.active) {
@@ -174,6 +184,7 @@ li a:hover:not(.active) {
   min-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
+  background-color: aliceblue;
 }
 
 .styled-table thead tr {
@@ -185,8 +196,8 @@ li a:hover:not(.active) {
 .styled-table th,
 .styled-table td {
   padding: 12px 15px;
-}
 
+}
 .styled-table tbody tr {
   border-bottom: 1px solid #dddddd;
 }
@@ -218,6 +229,7 @@ li a:hover:not(.active) {
   min-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
+  background-color: aliceblue;
 }
 
 .user-table thead tr {
@@ -293,20 +305,6 @@ input[type="email"] {
 
 /* - - - - - - */
 
-/* Koodiesimerkin tyylittely */
-pre {
-  background-color: aliceblue;
-}
-
-#loginResponse,
-#meResponse {
-  font-family: "Courier New", Courier, monospace;
-  font-size: smaller;
-  display: block;
-  width: 100%;
-  word-break: break-all;
-}
-
 footer {
   background-color: darkcyan;
   text-align: center;
@@ -314,17 +312,25 @@ footer {
   padding: 25px 20px;
   margin-top: 125px;
   width: 100%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 /* - - - - - */
 
 /* Modal/ popup */
+
+.update {
+  text-align: center;
+}
+
 .modal {
   display: none;
   position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
+  padding-bottom: 20px;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -332,11 +338,12 @@ footer {
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: #d3f5fb;
   margin: 15% auto;
-  padding: 20px;
+  padding: 20px 20px 60px 20px;
   border: 1px solid #888;
-  width: 80%;
+  border-radius: 15px;
+  width: 50%;
 }
 
 .close {

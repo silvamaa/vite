@@ -2,6 +2,11 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("/background.jpg");
 }
 
 * {
@@ -20,27 +25,9 @@ a:hover {
 
 body {
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 75vh;
   margin: 16px;
-  background-color: white;
-  background-image: url(/head.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
-  border-radius: 15px;
 }
-
-/* .jumbo {
-  background-color: white;
-  height: 70vh;
-  background-image: url(/head.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
-  border-radius: 15px;
-} */
 
 h1 {
   font-size: 3.5em;
@@ -112,6 +99,8 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: darkcyan;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 li {
@@ -124,13 +113,15 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  transition: background-color 0.3s;
 }
 
 li a:hover {
   color: white;
   background-color: rgb(3, 89, 181);
   transform: scale(1);
-  border-radius: 5px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 li a:hover:not(.active) {
@@ -148,6 +139,8 @@ footer {
   padding: 25px 20px;
   margin-top: 125px;
   width: 100%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 @media screen and (max-width: 800px) {

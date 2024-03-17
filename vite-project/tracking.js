@@ -21,7 +21,6 @@ document
     const mood = formData.get("mood");
     const sleep_hours = formData.get("sleep_hours");
     const notes = formData.get("notes");
-    const date = formData.get("date");
 
     // DEBUG: Check if form data is captured correctly
     console.log("Form Data:", mood, sleep_hours, notes);
@@ -111,9 +110,10 @@ async function getDiaryEntries() {
           <td>${entry.mood}</td>
           <td>${entry.sleep_hours}</td>
           <td>${entry.notes}</td>
-          <td>${entry.date ? entry.date : ""}</td>
           <td>
             <button class="update" data-id="${entry.entry_id}">Update</button>
+          </td>
+          <td>
             <button class="del" data-id="${entry.entry_id}">Delete</button>
           </td>
         `;
