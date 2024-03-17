@@ -43,7 +43,7 @@ document
     console.log("Request Body:", data);
 
     // Send data to backend
-    const url = "http://localhost:3001/api/entries";
+    const url = "hyte-server.northeurope.cloudapp.azure.com/api/entries";
     const options = {
       method: "POST",
       headers: {
@@ -82,7 +82,7 @@ async function getDiaryEntries() {
     }
 
     // Fetch user's diary entries
-    const response = await fetch("http://localhost:3001/api/entries", {
+    const response = await fetch("hyte-server.northeurope.cloudapp.azure.com/api/entries", {
       method: "GET",
       headers: {
         Authorization: "Bearer " + token,
@@ -148,7 +148,7 @@ async function updateEntry(entryId, updatedData) {
     }
 
     const response = await fetch(
-      `http://localhost:3001/api/entries/${entryId}`,
+      `hyte-server.northeurope.cloudapp.azure.com/api/entries/${entryId}`,
       {
         method: "PUT",
         headers: {
@@ -238,7 +238,7 @@ async function deleteEntry(event) {
         throw new Error("User token not found. Please log in.");
       }
 
-      const response = await fetch(`http://localhost:3001/api/entries/${id}`, {
+      const response = await fetch(`hyte-server.northeurope.cloudapp.azure.com/api/entries/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: "Bearer " + token,

@@ -16,7 +16,7 @@ allButton.addEventListener("click", getUsers);
 
 async function getUsers() {
   console.log("Getting all users");
-  const url = "http://127.0.0.1:3001/api/users";
+  const url = "hyte-server.northeurope.cloudapp.azure.com/api/users";
   let token = localStorage.getItem("token");
   const options = {
     method: "GET",
@@ -87,7 +87,7 @@ async function getUser(id) {
       throw new Error("User token not found. Please log in.");
     }
 
-    const url = `http://localhost:3001/api/users/${id}`;
+    const url = `hyte-server.northeurope.cloudapp.azure.com/api/users/${id}`;
     const options = {
       method: "GET",
       headers: {
@@ -145,7 +145,7 @@ function deleteUser(evt) {
   const id = evt.target.closest("tr").querySelector("td:last-child").innerText;
   console.log("User ID: ", id);
 
-  const url = `http://127.0.0.1:3001/api/users/${id}`;
+  const url = `hyte-server.northeurope.cloudapp.azure.com/api/users/${id}`;
   const token = localStorage.getItem("token");
   const options = {
     method: "DELETE",

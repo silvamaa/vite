@@ -21,7 +21,7 @@ createUser.addEventListener("click", async (evt) => {
   evt.preventDefault();
   console.log("Creating user");
 
-  const url = "http://127.0.0.1:3001/api/users";
+  const url = "hyte-server.northeurope.cloudapp.azure.com/api/users";
 
   const form = document.querySelector(".create_user_form");
   const username = form.querySelector("input[name=username]").value;
@@ -66,7 +66,7 @@ createUser.addEventListener("click", async (evt) => {
       };
 
       const loginResponse = await fetch(
-        "http://127.0.0.1:3001/api/auth/login",
+        "hyte-server.northeurope.cloudapp.azure.com/api/auth/login",
         loginOptions
       );
       const loginResponseData = await loginResponse.json();
@@ -97,7 +97,7 @@ loginUser.addEventListener("click", async (evt) => {
   evt.preventDefault();
   console.log("Logging in user");
 
-  const url = "http://localhost:3001/api/auth/login";
+  const url = "hyte-server.northeurope.cloudapp.azure.com/api/auth/login";
 
   const form = document.querySelector(".login_form");
 
