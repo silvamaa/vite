@@ -16,7 +16,7 @@ allButton.addEventListener("click", getUsers);
 
 async function getUsers() {
   console.log("Getting all users");
-  const url = "hyte-server.northeurope.cloudapp.azure.com/api/users";
+  const url = "/api/users";
   let token = localStorage.getItem("token");
   const options = {
     method: "GET",
@@ -87,7 +87,7 @@ async function getUser(id) {
       throw new Error("User token not found. Please log in.");
     }
 
-    const url = `hyte-server.northeurope.cloudapp.azure.com/api/users/${id}`;
+    const url = `/api/users/${id}`;
     const options = {
       method: "GET",
       headers: {
@@ -142,10 +142,10 @@ function deleteUser(evt) {
   console.log("Deleting information.");
 
   // Get the ID of the user to be deleted
-  const id = evt.target.closest("tr").querySelector("td:last-child").innerText;
+  const id = evt.target.getAttribute("data-id");
   console.log("User ID: ", id);
 
-  const url = `hyte-server.northeurope.cloudapp.azure.com/api/users/${id}`;
+  const url = `/api/users/${id}`;
   const token = localStorage.getItem("token");
   const options = {
     method: "DELETE",
@@ -154,19 +154,19 @@ function deleteUser(evt) {
     },
   };
 
-  const answer = confirm(`Are you sure you want to delete user ID: ${id} `);
+  const answer = confirm(
+    `Are you sure you want to delete user: ${id} `
+  );
   if (answer) {
-    fetch(url, options)
-      .then((response) => {
-        if (response.ok) {
-          console.log("User deleted successfully");
-          getUsers();
-        } else {
-          throw new Error("Failed to delete user");
-        }
+    fetchData(url, options)
+      .then((data) => {
+        console.log(data);
+        getUsers();
       })
       .catch((error) => {
         console.error("Error deleting user: ", error);
       });
+  } else {
+    throw new Error("Failed to delete user");
   }
 }
